@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String     @id @default(cuid())
+  email     String     @unique
+  username  String     @unique
+  avatar    String?
+  createdAt DateTime   @default(now())
+  snippets  Snippet[]
+  purchases Purchase[]
+  reviews   Review[]
+}
+
+model Snippet {
+  id          String     @id @default(cuid())
+  title       String
+  description String
+  price       Int
+  language    String
+  tags        Json
+  licenseType String
+  previewCode String
+  fullCode    String
+  sellerId    String
+  createdAt   DateTime   @default(now())
+  seller      User       @relation(fields: [sellerId], references: [id])
+  purchases   Purchase[]
+  reviews     Review[]
+}
+
+model Purchase {
+  id          String   @id @default(cuid())
+  buyerId     String
+  snippetId   String
+  amount      Int
+  licenseType String
+  createdAt   DateTime @default(now())
+  buyer       User     @relation(fields: [buyerId], references: [id])
+  snippet     Snippet  @relation(fields: [snippetId], references: [id])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  rating    Int
+  comment   String
+  snippetId String
+  userId    String
+  createdAt DateTime @default(now())
+  snippet   Snippet  @relation(fields: [snippetId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+}
