@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import SiteFooter from "@/components/SiteFooter";
 import SiteNav from "@/components/SiteNav";
 import { authOptions } from "@/lib/auth";
+import { formatCurrency } from "@/lib/format";
 import { marketplaceSnippets } from "@/lib/snippets";
 
 export default async function LibraryPage() {
@@ -23,6 +24,14 @@ export default async function LibraryPage() {
           Organize, search, and export everything you have licensed across your
           team.
         </p>
+        <div className="search-panel" style={{ marginTop: "2rem" }}>
+          <input className="search-input" placeholder="Search your library" />
+          <div className="search-suggestions">
+            <span className="suggestion">Auth</span>
+            <span className="suggestion">Billing</span>
+            <span className="suggestion">Edge</span>
+          </div>
+        </div>
       </section>
 
       <section className="container section">
@@ -35,9 +44,12 @@ export default async function LibraryPage() {
               </div>
               <h3>{snippet.title}</h3>
               <p className="section-subtitle">{snippet.description}</p>
-              <button className="button button-secondary" data-magnetic>
-                Open snippet
-              </button>
+              <div className="hero-card-footer">
+                <strong>{formatCurrency(snippet.priceCents)}</strong>
+                <button className="button button-secondary" data-magnetic>
+                  Open snippet
+                </button>
+              </div>
             </article>
           ))}
         </div>

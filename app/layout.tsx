@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "CodeMarket | Premium code snippet marketplace",
+  title: "SnippetMarket | Premium code snippet marketplace",
   description:
     "Upload, license, and sell production-ready code snippets with premium tooling for developers."
 };
