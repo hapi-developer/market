@@ -11,41 +11,36 @@ export default function HomePage() {
       <CursorGlow />
       <MotionProvider />
       <div className="background-layer" />
-      <div className="floating-code">
-        <span>{"const checkout = await"}</span>
-        <span>{"license: \"commercial\""}</span>
-        <span>{"snippet.preview()"}</span>
-      </div>
+      <div className="noise-layer" />
 
       <section className="hero container">
         <div className="hero-grid">
           <div className="reveal">
-            <p className="hero-eyebrow">Developer code marketplace</p>
+            <p className="hero-eyebrow">SnippetMarket</p>
             <h1>
-              Upload, license, and sell premium code snippets with the polish of
-              a top-tier SaaS.
+              The premium marketplace for vetted, licensable code snippets.
             </h1>
             <p>
-              CodeMarket is the Stripe + Gumroad for developers. Build
-              reputation, earn recurring income, and ship production-ready
-              building blocks in minutes.
+              Upload, license, and sell production-ready building blocks with
+              enterprise trust. Buyers get clean previews, verified licenses,
+              and fast checkout.
             </p>
             <div className="hero-actions">
               <button className="button button-primary" data-magnetic>
                 Explore snippets
               </button>
               <button className="button button-secondary" data-magnetic>
-                View live demo
+                View seller playbook
               </button>
             </div>
             <div className="hero-metrics">
               <div className="metric">
-                <strong>12k+</strong>
-                <span>Snippets live</span>
+                <strong>18k+</strong>
+                <span>Snippets vetted</span>
               </div>
               <div className="metric">
-                <strong>$2.1M</strong>
-                <span>Paid to developers</span>
+                <strong>$4.8M</strong>
+                <span>Payouts to devs</span>
               </div>
               <div className="metric">
                 <strong>4.9★</strong>
@@ -58,8 +53,8 @@ export default function HomePage() {
               <span className="badge">Trending snippet</span>
               <strong>Realtime Auth Guard</strong>
               <p className="section-subtitle">
-                Edge-ready middleware with audit logs, session replay, and built-
-                in compliance hooks.
+                Edge-ready middleware with audit logs, session replay, and
+                compliance hooks.
               </p>
               <div className="hero-card-footer">
                 <strong>$48</strong>
@@ -89,7 +84,7 @@ export default function HomePage() {
             <span className="suggestion">Next.js auth</span>
             <span className="suggestion">Stripe webhook handler</span>
             <span className="suggestion">Rate limiter</span>
-            <span className="suggestion">React animation hook</span>
+            <span className="suggestion">React motion hook</span>
           </div>
         </div>
       </section>
@@ -98,8 +93,8 @@ export default function HomePage() {
         <div className="reveal">
           <h2 className="section-title">Live marketplace preview</h2>
           <p className="section-subtitle">
-            Browse high-signal snippets with verified licenses, production-ready
-            code previews, and instant checkout.
+            Browse curated snippets with verified licenses, clean previews, and
+            instant checkout.
           </p>
         </div>
         <div className="reveal" style={{ marginTop: "2rem" }}>
@@ -111,15 +106,16 @@ export default function HomePage() {
         <div className="reveal">
           <h2 className="section-title">Trust built into every transaction</h2>
           <p className="section-subtitle">
-            Proven security reviews, transparent licensing, and payouts trusted
-            by elite engineering teams.
+            Curated quality reviews, licensing clarity, and developer payouts
+            trusted by top product teams.
           </p>
         </div>
         <div className="trust-strip">
           {[
-            { label: "Snippets sold", value: 12000, suffix: "+" },
-            { label: "Paid to developers", value: 2000000, suffix: "+" },
-            { label: "Top startup adoption", value: 320, suffix: "+" }
+            { label: "Snippets sold", value: 12840, suffix: "+" },
+            { label: "Payouts to devs", value: 4800000, suffix: "+" },
+            { label: "Average rating", value: 49, suffix: "/50" },
+            { label: "Hours saved", value: 96000, suffix: "+" }
           ].map((item) => (
             <div className="trust-card reveal" key={item.label}>
               <div
@@ -145,14 +141,16 @@ export default function HomePage() {
               snippets in minutes. We handle checkout, tax, and delivery.
             </p>
             <div className="cta-steps">
-              {["Upload verified snippets", "Choose license tiers", "Earn recurring revenue"].map(
-                (step, index) => (
-                  <div className="cta-step" key={step}>
-                    <strong>0{index + 1}</strong>
-                    <span>{step}</span>
-                  </div>
-                )
-              )}
+              {[
+                "Upload verified snippets",
+                "Choose license tiers",
+                "Earn recurring revenue"
+              ].map((step, index) => (
+                <div className="cta-step" key={step}>
+                  <strong>0{index + 1}</strong>
+                  <span>{step}</span>
+                </div>
+              ))}
             </div>
             <button className="button button-primary" data-magnetic>
               Start selling today
@@ -175,6 +173,37 @@ export default function HomePage() {
               <span className="section-subtitle">Projected next payout</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section container">
+        <div className="reveal">
+          <h2 className="section-title">FAQ</h2>
+          <p className="section-subtitle">
+            Everything you need to know before you launch or buy your next
+            snippet.
+          </p>
+        </div>
+        <div className="data-grid" style={{ marginTop: "2rem" }}>
+          {[
+            {
+              title: "How are snippets reviewed?",
+              body: "Each snippet runs through automated checks plus a manual quality review for security, tests, and documentation."
+            },
+            {
+              title: "What licensing options are available?",
+              body: "Offer personal, commercial, team, or enterprise licenses with clear usage rules and audit logs."
+            },
+            {
+              title: "How do payouts work?",
+              body: "Payouts are issued weekly with downloadable invoices, tax handling, and refund protection."
+            }
+          ].map((item) => (
+            <article className="panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p className="section-subtitle">{item.body}</p>
+            </article>
+          ))}
         </div>
       </section>
 

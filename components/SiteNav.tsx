@@ -4,7 +4,9 @@ export default function SiteNav() {
   return (
     <header className="header">
       <div className="container nav">
-        <div className="brand">CodeMarket</div>
+        <Link className="brand" href="/">
+          SnippetMarket
+        </Link>
         <nav className="nav-links">
           <Link className="nav-link" href="/marketplace">
             Marketplace
@@ -17,6 +19,9 @@ export default function SiteNav() {
           </Link>
           <Link className="nav-link" href="/library">
             Library
+          </Link>
+          <Link className="nav-link" href="/docs/licensing">
+            Licensing
           </Link>
         </nav>
         <div className="nav-actions">

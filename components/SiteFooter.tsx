@@ -5,10 +5,10 @@ export default function SiteFooter() {
     <footer className="footer">
       <div className="container footer-grid">
         <div>
-          <div className="brand">CodeMarket</div>
+          <div className="brand">SnippetMarket</div>
           <p>
-            Premium infrastructure for buying, selling, and licensing production-
-            ready code snippets.
+            Premium infrastructure for buying, selling, and licensing
+            production-ready code snippets.
           </p>
         </div>
         <div>
@@ -17,14 +17,15 @@ export default function SiteFooter() {
             <Link href="/marketplace">Marketplace</Link>
             <Link href="/sell">Sell</Link>
             <Link href="/dashboard">Dashboard</Link>
+            <Link href="/upload">Upload</Link>
           </div>
         </div>
         <div>
-          <strong>Community</strong>
+          <strong>Resources</strong>
           <div className="footer-grid" style={{ marginTop: "1rem" }}>
             <Link href="/library">Library</Link>
-            <Link href="/marketplace">Collections</Link>
-            <Link href="/">Updates</Link>
+            <Link href="/docs/licensing">Licensing</Link>
+            <Link href="/profile/signal-labs">Seller profiles</Link>
           </div>
         </div>
       </div>

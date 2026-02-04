@@ -7,43 +7,77 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum UserRole {
+  buyer
+  seller
+  admin
+}
+
+enum LicenseType {
+  personal
+  commercial
+  team
+  enterprise
+}
+
 model User {
-  id        String     @id @default(cuid())
-  email     String     @unique
-  username  String     @unique
-  avatar    String?
-  createdAt DateTime   @default(now())
+  id        String         @id @default(cuid())
+  email     String         @unique
+  username  String         @unique
+  avatarUrl String?
+  role      UserRole       @default(buyer)
+  createdAt DateTime       @default(now())
   snippets  Snippet[]
   purchases Purchase[]
   reviews   Review[]
+  saved     SavedSnippet[]
+
+  @@index([email])
+  @@index([username])
 }
 
 model Snippet {
-  id          String     @id @default(cuid())
-  title       String
-  description String
-  price       Int
-  language    String
-  tags        Json
-  licenseType String
-  previewCode String
-  fullCode    String
-  sellerId    String
-  createdAt   DateTime   @default(now())
-  seller      User       @relation(fields: [sellerId], references: [id])
-  purchases   Purchase[]
-  reviews     Review[]
+  id               String         @id @default(cuid())
+  title            String
+  description      String
+  language         String
+  tags             String[]
+  priceCents       Int
+  currency         String
+  licenseType      LicenseType
+  previewCode      String
+  fullCode         String
+  sellerId         String
+  ratingAvg        Float          @default(0)
+  ratingCount      Int            @default(0)
+  salesCount       Int            @default(0)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  seller           User           @relation(fields: [sellerId], references: [id])
+  purchases        Purchase[]
+  reviews          Review[]
+  saved            SavedSnippet[]
+
+  @@index([language])
+  @@index([licenseType])
+  @@index([priceCents])
+  @@index([ratingAvg])
+  @@index([createdAt])
 }
 
 model Purchase {
-  id          String   @id @default(cuid())
-  buyerId     String
-  snippetId   String
-  amount      Int
-  licenseType String
-  createdAt   DateTime @default(now())
-  buyer       User     @relation(fields: [buyerId], references: [id])
-  snippet     Snippet  @relation(fields: [snippetId], references: [id])
+  id              String      @id @default(cuid())
+  buyerId         String
+  snippetId       String
+  amountCents     Int
+  licenseType     LicenseType
+  stripeSessionId String?
+  createdAt       DateTime    @default(now())
+  buyer           User        @relation(fields: [buyerId], references: [id])
+  snippet         Snippet     @relation(fields: [snippetId], references: [id])
+
+  @@index([buyerId])
+  @@index([snippetId])
 }
 
 model Review {
@@ -55,4 +89,18 @@ model Review {
   createdAt DateTime @default(now())
   snippet   Snippet  @relation(fields: [snippetId], references: [id])
   user      User     @relation(fields: [userId], references: [id])
+
+  @@index([snippetId])
+}
+
+model SavedSnippet {
+  id        String   @id @default(cuid())
+  userId    String
+  snippetId String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  snippet   Snippet  @relation(fields: [snippetId], references: [id])
+
+  @@unique([userId, snippetId])
+  @@index([userId])
 }
