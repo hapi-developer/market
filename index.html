@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Market - Marketplace for Developer Snippets</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <div class="logo">CodeMarket</div>
+        <div class="nav-links">
+          <a href="#marketplace">Marketplace</a>
+          <a href="#sellers">For sellers</a>
+          <a href="#buyers">For buyers</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#resources">Resources</a>
+        </div>
+        <div class="nav-actions">
+          <button class="ghost-button">Sign in</button>
+          <button class="primary-button">Start selling</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Marketplace for modern developers</p>
+          <h1>
+            Upload, license, and sell high-impact code snippets in one curated
+            marketplace.
+          </h1>
+          <p class="subhead">
+            CodeMarket is built for creators who want to monetize their
+            engineering craft and teams that want to ship faster. Discover
+            trusted snippets, buy once, and deploy everywhere.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-button">Explore the marketplace</button>
+            <button class="secondary-button">View demo storefront</button>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <h3>12k+</h3>
+              <p>Verified snippets</p>
+            </div>
+            <div>
+              <h3>3.1k</h3>
+              <p>Active sellers</p>
+            </div>
+            <div>
+              <h3>98%</h3>
+              <p>Buyer satisfaction</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="panel-card">
+            <div class="panel-header">
+              <span>Featured snippet</span>
+              <span class="badge">Trending</span>
+            </div>
+            <h3>Realtime Chat Hook</h3>
+            <p>
+              Type-safe React hook with Supabase and streaming support. Includes
+              analytics hooks and fallback storage.
+            </p>
+            <div class="panel-tags">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Realtime</span>
+            </div>
+            <div class="panel-footer">
+              <div>
+                <p class="price">$48</p>
+                <p class="meta">Lifetime license</p>
+              </div>
+              <button class="primary-button">Add to cart</button>
+            </div>
+          </div>
+          <div class="panel-card muted">
+            <div class="panel-header">
+              <span>Top seller</span>
+              <span class="badge">Pro</span>
+            </div>
+            <h3>NovaScripts Studio</h3>
+            <p>
+              120 snippets · 4.9 rating · Automated updates for every purchase.
+            </p>
+            <div class="progress">
+              <span>Monthly revenue</span>
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+            </div>
+            <button class="secondary-button">Follow seller</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="marketplace" class="marketplace">
+        <div class="section-heading">
+          <h2>Discover the fastest way to ship quality code.</h2>
+          <p>
+            Every snippet is vetted for security, documentation, and performance
+            so buyers can trust what they ship.
+          </p>
+        </div>
+        <div class="card-grid">
+          <article class="market-card">
+            <h3>AI-ready templates</h3>
+            <p>
+              Snippets include prompt scaffolds, model adapters, and guardrails
+              built by practitioners.
+            </p>
+          </article>
+          <article class="market-card">
+            <h3>Instant licensing</h3>
+            <p>
+              License tiers auto-apply based on use case. Upgrade without
+              re-purchasing.
+            </p>
+          </article>
+          <article class="market-card">
+            <h3>Private workspaces</h3>
+            <p>
+              Teams can curate internal catalogs and onboard new members in
+              minutes.
+            </p>
+          </article>
+          <article class="market-card">
+            <h3>One-click payouts</h3>
+            <p>
+              Global payouts in 30+ currencies with real-time earnings insights.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="sellers" class="split-section">
+        <div>
+          <h2>For sellers who build once and sell forever.</h2>
+          <p>
+            Launch your storefront with branded landing pages, curated
+            collections, and performance analytics that highlight the snippets
+            that drive conversions.
+          </p>
+          <ul class="feature-list">
+            <li>Customizable licensing with automatic compliance checks.</li>
+            <li>AI-powered pricing recommendations based on demand trends.</li>
+            <li>Embedded docs, changelogs, and version management.</li>
+          </ul>
+          <button class="primary-button">Create a seller profile</button>
+        </div>
+        <div class="insight-card">
+          <h3>Seller dashboard</h3>
+          <div class="stat-row">
+            <div>
+              <p class="stat">$24,780</p>
+              <p class="meta">Projected monthly revenue</p>
+            </div>
+            <div class="trend">+18%</div>
+          </div>
+          <div class="mini-chart">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="buyers" class="split-section reverse">
+        <div>
+          <h2>For buyers who need trustworthy building blocks.</h2>
+          <p>
+            Search by stack, performance rating, or licensing. Save snippets to
+            your personal vault, and collaborate with your team in shared
+            boards.
+          </p>
+          <ul class="feature-list">
+            <li>Verified security review and dependency audit badges.</li>
+            <li>Integrated snippet testing sandbox before purchase.</li>
+            <li>Seamless exports to GitHub, GitLab, and Bitbucket.</li>
+          </ul>
+          <button class="secondary-button">Browse curated collections</button>
+        </div>
+        <div class="insight-card soft">
+          <h3>Buyer workspace</h3>
+          <div class="chip-group">
+            <span>Saved: 18</span>
+            <span>Team boards: 4</span>
+            <span>Upcoming renewals: 2</span>
+          </div>
+          <div class="task-list">
+            <div>
+              <h4>Performance checks</h4>
+              <p>3 snippets need review</p>
+            </div>
+            <div>
+              <h4>License updates</h4>
+              <p>2 upgrades recommended</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="pricing">
+        <div class="section-heading">
+          <h2>Flexible pricing for individuals and teams.</h2>
+          <p>
+            Start for free, then scale when you need multi-seat workspaces and
+            revenue optimizations.
+          </p>
+        </div>
+        <div class="pricing-grid">
+          <article>
+            <h3>Starter</h3>
+            <p class="price">$0</p>
+            <p class="meta">For exploring the marketplace</p>
+            <ul>
+              <li>Unlimited browsing</li>
+              <li>Personal vault</li>
+              <li>Community support</li>
+            </ul>
+            <button class="secondary-button">Get started</button>
+          </article>
+          <article class="featured">
+            <div class="badge">Most popular</div>
+            <h3>Creator Pro</h3>
+            <p class="price">$39</p>
+            <p class="meta">Per month, billed annually</p>
+            <ul>
+              <li>Custom storefront</li>
+              <li>Analytics + pricing AI</li>
+              <li>Priority promotion</li>
+            </ul>
+            <button class="primary-button">Upgrade</button>
+          </article>
+          <article>
+            <h3>Enterprise</h3>
+            <p class="price">Custom</p>
+            <p class="meta">For large teams & agencies</p>
+            <ul>
+              <li>Multi-team workspaces</li>
+              <li>SSO + compliance</li>
+              <li>Dedicated success team</li>
+            </ul>
+            <button class="secondary-button">Talk to sales</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="resources" class="resources">
+        <div class="section-heading">
+          <h2>Resources that build trust and momentum.</h2>
+          <p>
+            Learn from top sellers, explore snippet playbooks, and stay ahead
+            with weekly market insights.
+          </p>
+        </div>
+        <div class="resource-grid">
+          <article>
+            <h4>Snippet playbooks</h4>
+            <p>Step-by-step guides for packaging and licensing your code.</p>
+          </article>
+          <article>
+            <h4>Market pulse</h4>
+            <p>Weekly reports on trending stacks, pricing, and buyer demand.</p>
+          </article>
+          <article>
+            <h4>Creator stories</h4>
+            <p>Interviews with top sellers sharing their launch strategies.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div>
+          <h2>Launch your snippet store today.</h2>
+          <p>
+            Join a marketplace that celebrates craftsmanship and helps teams
+            build faster with confidence.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <button class="primary-button">Start selling</button>
+          <button class="ghost-button">Book a demo</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <div class="logo">CodeMarket</div>
+        <p>
+          The modern marketplace for developers to monetize and buy production-
+          ready code snippets.
+        </p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Platform</h4>
+          <a href="#marketplace">Marketplace</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#resources">Resources</a>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <a href="#sellers">For sellers</a>
+          <a href="#buyers">For buyers</a>
+          <a href="#">Careers</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:hello@codemarket.io">hello@codemarket.io</a>
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
